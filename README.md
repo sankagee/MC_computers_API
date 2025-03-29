@@ -18,7 +18,7 @@ The backend uses Entity Framework Core to manage the database schema.
 
 To migrate the tables to your database: (Sample Data also Available (Seed Data))
 
-	cdotnet ef migrations add InitialCreate`
+	`dotnet ef migrations add InitialCreate`
  
 	`dotnet ef database update`
 
