@@ -1,4 +1,4 @@
-# MC_computers_API Running the Application
+# MC Computers API Setup Guide
 
 # 1. Setting Up the Backend (ASP.NET Web API) 
 
