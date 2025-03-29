@@ -4,6 +4,7 @@ namespace MC_computers_API.Models.Entities
 {
     public class Customer
     {
+        [Key]
         public required int CustomerID { get; set; }
 
         [MaxLength(100)]

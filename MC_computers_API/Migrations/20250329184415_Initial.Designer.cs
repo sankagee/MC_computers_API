@@ -4,6 +4,7 @@ using MC_computers_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MC_computers_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250329184415_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,35 +55,6 @@ namespace MC_computers_API.Migrations
                     b.HasKey("CustomerID");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            CustomerID = 1,
-                            Address = "123 Main St, City, LK",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Cus_Name = "Nimal",
-                            Email = "Nimal@example.com",
-                            Phone = "123-456-7890"
-                        },
-                        new
-                        {
-                            CustomerID = 2,
-                            Address = "123 Main St, City, LK",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Cus_Name = "Kamal",
-                            Email = "Kamal@example.com",
-                            Phone = "987-654-3210"
-                        },
-                        new
-                        {
-                            CustomerID = 3,
-                            Address = "123 Main St, City, LK",
-                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Cus_Name = "Amal",
-                            Email = "Amal@example.com",
-                            Phone = "555-123-4567"
-                        });
                 });
 
             modelBuilder.Entity("MC_computers_API.Models.Entities.CustomerInvoice", b =>
