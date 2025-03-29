@@ -15,6 +15,7 @@ namespace MC_computers_API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            //Seed Data for Products and Customers Tables
             modelBuilder.Entity<Products>().HasData(
                 new Products
                 {
