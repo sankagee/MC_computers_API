@@ -1,5 +1,11 @@
 # MC Computers API Setup Guide
 
+For ASP.NET Web API Backend :
+
+.NET SDK 8.0
+
+SQL Server
+
 # 1. Setting Up the Backend (ASP.NET Web API) 
 
 ## Step 1 : [Clone the Repository](https://github.com/sankagee/MC_computers_API.git)
