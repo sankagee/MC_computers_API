@@ -52,7 +52,26 @@ namespace MC_computers_API.Controllers
 
                 _context.SaveChanges();
 
-                return Ok(new { Message = "Invoice generated successfully!" });
+                var invoiceDto = new InvoiceDto
+                {
+                    InvoiceID = customerInvoice.InvoiceID,
+                    TransactionDate = (DateTime)customerInvoice.TransactionDate,
+                    CustomerName = customerInvoice.CustomerName,
+                    TotalAmount = (decimal)customerInvoice.TotalAmount,
+                    Discount = (decimal)customerInvoice.Discount,
+                    BalanceAmount = (decimal)customerInvoice.BalanceAmount,
+                    InvoiceDetails = customerInvoice.InvoiceDetails.Select(d => new InvoiceDetailDto
+                    {
+                        ProductID = d.ProductID,
+                        ProductName = d.Product.ProductName,
+                        Quantity = (int)d.Quantity,
+                        Price = (decimal)d.Price,
+                        Total = (decimal)d.Total
+                    }).ToList()
+                };
+
+                return Ok(new { Message = "Invoice generated successfully!", Invoice = invoiceDto });
+
             }
             catch (Exception ex)
             {
