@@ -5,13 +5,13 @@ namespace MC_computers_API.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions <ApplicationDbContext> options) : base(options)
         {
         }
-        public DbSet<Customer>? Customers { get; set; }
-        public DbSet<Products>? Products { get; set; }
-        public DbSet<CustomerInvoice>? CustomerInvoices { get; set; }
-        public DbSet<InvoiceDetails>? InvoiceDetails { get; set; }
+        public virtual DbSet<Customer>? Customers { get; set; }
+        public virtual DbSet<Products>? Products { get; set; }
+        public virtual DbSet<CustomerInvoice>? CustomerInvoices { get; set; }
+        public virtual DbSet<InvoiceDetails>? InvoiceDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -52,8 +52,8 @@ namespace MC_computers_API.Data
                     CustomerID = 1,
                     Cus_Name = "Nimal",
                     Email = "Nimal@example.com",
-                    Phone = "123-456-7890",
-                    Address = "123 Main St, City, LK",
+                    Phone = "023-456-7890",
+                    Address = "123 Main St, LK",
                     CreatedAt = new DateTime()
                 },
                 new Customer
@@ -61,8 +61,8 @@ namespace MC_computers_API.Data
                     CustomerID = 2,
                     Cus_Name = "Kamal",
                     Email = "Kamal@example.com",
-                    Phone = "987-654-3210",
-                    Address = "123 Main St, City, LK",
+                    Phone = "087-654-3210",
+                    Address = "123 Main St, LK",
                     CreatedAt = new DateTime()
                 },
                 new Customer
@@ -70,8 +70,8 @@ namespace MC_computers_API.Data
                     CustomerID = 3,
                     Cus_Name = "Amal",
                     Email = "Amal@example.com",
-                    Phone = "555-123-4567",
-                    Address = "123 Main St, City, LK",
+                    Phone = "055-123-4567",
+                    Address = "123 Main St, LK",
                     CreatedAt = new DateTime()
                 }
             );

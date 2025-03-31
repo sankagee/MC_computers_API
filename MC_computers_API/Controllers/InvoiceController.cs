@@ -20,7 +20,7 @@ namespace MC_computers_API.Controllers
         {
             try
             {
-                // Step 1: Create the CustomerInvoice record
+                // Create the CustomerInvoice record
                 var customerInvoice = new CustomerInvoice
                 {
                     TransactionDate = DateTime.UtcNow,
@@ -40,7 +40,7 @@ namespace MC_computers_API.Controllers
                 _context.CustomerInvoices.Add(customerInvoice);
                 _context.SaveChanges();
 
-                // Step 2: Update the stock quantities for each product
+                // Update the stock quantities for each product
                 foreach (var product in request.Products)
                 {
                     var dbProduct = _context.Products.FirstOrDefault(p => p.ProductID == product.ProductID);

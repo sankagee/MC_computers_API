@@ -21,7 +21,8 @@ namespace MC_computers_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-            return await _context.Customers.ToListAsync();
+            var customers = _context.Customers.ToList();
+            return Ok(customers);
         }
     }
 }
